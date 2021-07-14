@@ -15,6 +15,9 @@ function isValid(mm, dd, yy) {
   return false
 }
 
+
+// mm/dd/yy  
+
 let total = 0
 
 // asc
@@ -39,9 +42,41 @@ for (let k=1; k<=6; k++) {
       n++
     }
   }
-  console.log(`k = ${k}, n = ${n}`)
+  console.log(`k = ${-k}, n = ${n}`)
   total += n
 }
 
 console.log(`Total: ${total}`)
 
+// dd/mm/yy  
+
+total = 0
+
+// asc
+console.log('Asc')
+for (let k=1; k<=11; k++) {
+  let n = 0
+  for (let dd = 1; dd <= 12-k; dd++) {
+    if (isValid(dd + k, dd, dd + 2*k)) {
+      n++
+    }
+  }
+  console.log(`k = ${k}, n = ${n}`)
+  total += n
+}
+
+// desc
+
+console.log('Desc')
+for (let k=1; k<=12; k++) {
+  let n = 0
+  for (let dd = 2*k; dd <= 24; dd++) {
+    if (isValid(dd - k, dd, dd - 2*k)) {
+      n++
+    }
+  }
+  console.log(`k = ${-k}, n = ${n}`)
+  total += n
+}
+
+console.log(`Total: ${total}`)
