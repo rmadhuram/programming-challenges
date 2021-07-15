@@ -15,7 +15,6 @@ function isValid(mm, dd, yy) {
   return false
 }
 
-
 // mm/dd/yy  
 
 let total = 0
@@ -32,9 +31,6 @@ for (let k=1; k<=30; k++) {
   console.log(`k = ${k}, n = ${n}`)
   total += n
 }
-
-console.log(`Asc Total: ${total}`)
-
 
 // desc
 console.log('Desc')
