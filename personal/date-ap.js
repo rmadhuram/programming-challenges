@@ -24,7 +24,7 @@ let total = 0
 console.log('Asc')
 for (let k=1; k<=30; k++) {
   let n = 0
-  for (let mm = 1; mm <= 12; mm++) {
+  for (let mm = 1; mm <=12 && mm + k <= 31; mm++) {
     if (isValid(mm, mm + k, mm + 2*k)) {
       n++
     }
@@ -32,6 +32,9 @@ for (let k=1; k<=30; k++) {
   console.log(`k = ${k}, n = ${n}`)
   total += n
 }
+
+console.log(`Asc Total: ${total}`)
+
 
 // desc
 console.log('Desc')
